@@ -4,16 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SP Impex | Bulk Orders</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
-  <header class="site-header slim">
-    <div class="container nav-wrap">
-      <a href="../index.html" class="brand">
-        <span class="brand-main">Niraa</span>
-        <span class="brand-sub">– A unit of <strong>SP Impex</strong></span>
+  <header class="site-header scrolled" style="position:sticky;">
+    <div class="container nav-shell glass">
+      <a class="brand" href="../index.html">
+        <span class="brand-name">Niraa</span>
+        <span class="brand-sub">A unit of <span style="color:var(--gold)">SP Impex</span></span>
       </a>
-      <nav class="main-nav">
+      <nav class="desktop-nav" style="margin-left:auto;">
         <a href="../index.html">Back to Store</a>
         <a href="account.html">Account</a>
       </nav>
@@ -21,27 +24,28 @@
   </header>
 
   <main class="section">
-    <div class="container bulk-wrap">
-      <h1>Bulk Orders by SP Impex</h1>
-      <p>Looking for wholesale quantities for retail or corporate requirements? Submit your details and our team will contact you.</p>
-      <form class="bulk-form">
-        <label>Business Name<input type="text" placeholder="Your business name" /></label>
-        <label>Contact Person<input type="text" placeholder="Full name" /></label>
-        <label>Email<input type="email" placeholder="business@email.com" /></label>
-        <label>Phone<input type="tel" placeholder="+91-00000-00000" /></label>
-        <label>Product Category
-          <select>
-            <option>T-Shirts</option>
-            <option>Shirts</option>
-            <option>Pants</option>
-            <option>Kurtas</option>
-            <option>Loungewear</option>
-            <option>Shorts</option>
-          </select>
+    <div class="container">
+      <section class="glass-soft" style="padding:1.3rem;border-radius:16px;max-width:860px;margin-inline:auto;">
+        <h1>SP Impex Bulk Orders</h1>
+        <p class="muted">Partner with us for wholesale and high-volume manufacturing requirements.</p>
+
+        <div class="checkout-grid" style="margin-top:1rem;">
+          <label>Business Name<input type="text" placeholder="Your company name" /></label>
+          <label>Contact Person<input type="text" placeholder="Full name" /></label>
+          <label>Email<input type="email" placeholder="business@email.com" /></label>
+          <label>Phone<input type="tel" placeholder="+91 90000 00000" /></label>
+          <label>Category
+            <input type="text" placeholder="T-Shirts / Shirts / Pants / Kurtas" />
+          </label>
+          <label>Estimated Quantity<input type="text" placeholder="e.g. 1200 units" /></label>
+        </div>
+
+        <label style="display:block;margin-top:0.8rem;">Requirement Notes
+          <input type="text" placeholder="Fabric preferences, timelines, customization, delivery city..." />
         </label>
-        <label>Order Requirement<textarea rows="4" placeholder="Mention quantity, size mix, color preferences, delivery timeline..."></textarea></label>
-        <button type="button" class="btn btn-primary">Submit Inquiry</button>
-      </form>
+
+        <button class="btn btn-gold" style="margin-top:1rem;">Submit Inquiry</button>
+      </section>
     </div>
   </main>
 
@@ -49,11 +53,15 @@
     <div class="container footer-grid">
       <div>
         <h4>SP Impex</h4>
-        <p>Wholesale & manufacturing partner for Niraa.</p>
+        <p>Trusted manufacturing and bulk apparel partner.</p>
       </div>
       <div>
-        <h4>Need retail shopping?</h4>
-        <a href="../index.html">Go back to Niraa storefront</a>
+        <h4>Retail Store</h4>
+        <a href="../index.html">Go to Niraa storefront</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: bulk@spimpex.com</p>
       </div>
     </div>
   </footer>
