@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Niraa | Modern Apparel Storefront</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand" aria-label="Niraa home page">
+        <span class="brand-main">Niraa</span>
+        <span class="brand-sub">– A unit of <span class="brand-link-wrap"><a href="pages/bulk-order.html">SP Impex</a></span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#hero">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#featured-products">Products</a>
+        <a href="pages/account.html">Login / Register</a>
+        <a href="pages/bulk-order.html">Bulk Orders</a>
+      </nav>
+
+      <button id="cartButton" class="cart-btn" aria-label="Open cart">
+        🛒
+        <span id="cartCount" class="cart-count">0</span>
+      </button>
+
+      <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
+    </div>
+
+    <nav id="mobileMenu" class="mobile-menu" aria-label="Mobile navigation">
+      <a href="#hero">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#featured-products">Products</a>
+      <a href="pages/account.html">Login / Register</a>
+      <a href="pages/bulk-order.html">Bulk Orders</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-content">
+        <div>
+          <p class="hero-kicker">Contemporary everyday wear</p>
+          <h1>Elevate your wardrobe with Niraa essentials</h1>
+          <p>Explore curated styles across T-Shirts, Shirts, Pants, Kurtas, Loungewear, and Shorts. Built for comfort and crafted for modern living.</p>
+          <a href="#featured-products" class="btn btn-primary">Shop Featured</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="categories" class="section">
+      <div class="container">
+        <h2>Shop by Category</h2>
+        <div id="categoryFilters" class="category-filters" role="tablist" aria-label="Product categories">
+          <button class="category-btn active" data-category="All">All</button>
+          <button class="category-btn" data-category="T-Shirts">T-Shirts</button>
+          <button class="category-btn" data-category="Shirts">Shirts</button>
+          <button class="category-btn" data-category="Pants">Pants</button>
+          <button class="category-btn" data-category="Kurtas">Kurtas</button>
+          <button class="category-btn" data-category="Loungewear">Loungewear</button>
+          <button class="category-btn" data-category="Shorts">Shorts</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured-products" class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>Featured Products</h2>
+          <p>4 products per row on desktop, optimized for tablet and mobile shopping.</p>
+        </div>
+        <div id="productGrid" class="product-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="closeCart" aria-label="Close cart">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-summary">
+      <p>Subtotal: <strong id="cartSubtotal">₹0</strong></p>
+      <button id="checkoutTrigger" class="btn btn-primary full">Proceed to Checkout</button>
+    </div>
+  </aside>
+  <div id="overlay" class="overlay" hidden></div>
+
+  <div id="productModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button id="closeProductModal" class="modal-close" aria-label="Close product modal">✕</button>
+      <div id="productModalBody"></div>
+    </div>
+  </div>
+
+  <div id="checkoutModal" class="modal" aria-hidden="true">
+    <div class="modal-content checkout-modal-content">
+      <button id="closeCheckoutModal" class="modal-close" aria-label="Close checkout modal">✕</button>
+      <h3>Checkout</h3>
+      <div class="checkout-flow">
+        <div class="checkout-step">
+          <h4>Shipping details</h4>
+          <label>Full Name<input type="text" placeholder="John Doe" /></label>
+          <label>Address<input type="text" placeholder="Street, City, State" /></label>
+          <label>Phone<input type="tel" placeholder="+91-00000-00000" /></label>
+        </div>
+        <div class="checkout-step">
+          <h4>Payment</h4>
+          <label>Card Number<input type="text" placeholder="0000 0000 0000 0000" /></label>
+          <label>Expiry<input type="text" placeholder="MM/YY" /></label>
+          <label>CVV<input type="password" placeholder="***" /></label>
+        </div>
+      </div>
+      <button id="placeOrder" class="btn btn-primary full">Place Order</button>
+      <p id="checkoutMessage" class="checkout-message"></p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Niraa – A unit of SP Impex</h4>
+        <p>Email: hello@niraa.com</p>
+        <p>Phone: +91-98765-43210</p>
+        <p>Address: Jaipur, Rajasthan, India</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#featured-products">Featured Products</a>
+        <a href="pages/account.html">Login / Register</a>
+        <a href="pages/bulk-order.html">Bulk Orders (SP Impex)</a>
+      </div>
+      <div>
+        <h4>Social</h4>
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
