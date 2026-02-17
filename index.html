@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Niraa — Redefining Everyday Elegance</title>
+  <meta name="description" content="Niraa – A unit of SP Impex. Premium, minimalist fashion storefront experience." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Animated premium navbar -->
+  <header id="siteHeader" class="site-header">
+    <div class="container nav-shell glass">
+      <a class="brand" href="index.html" aria-label="Niraa Home">
+        <span class="brand-name">Niraa</span>
+        <span class="brand-sub">A unit of <a href="pages/bulk-order.html">SP Impex</a></span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary">
+        <a href="#hero">Home</a>
+        <a href="#collections">Collections</a>
+        <a href="#products">Products</a>
+        <a href="pages/account.html">Login / Register</a>
+        <a href="pages/bulk-order.html">Bulk Orders</a>
+      </nav>
+
+      <button id="menuToggle" class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+
+    <nav id="mobileNav" class="mobile-nav glass" aria-label="Mobile navigation">
+      <a href="#hero">Home</a>
+      <a href="#collections">Collections</a>
+      <a href="#products">Products</a>
+      <a href="pages/account.html">Login / Register</a>
+      <a href="pages/bulk-order.html">Bulk Orders</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Full-screen hero with sliding background images -->
+    <section id="hero" class="hero">
+      <div class="hero-slides" id="heroSlides">
+        <article class="hero-slide is-active" style="--bg:url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1800&q=80')"></article>
+        <article class="hero-slide" style="--bg:url('https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1800&q=80')"></article>
+        <article class="hero-slide" style="--bg:url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1800&q=80')"></article>
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content container fade-in-up">
+        <p class="hero-kicker">Premium Crafted Apparel</p>
+        <h1>Redefining Everyday Elegance</h1>
+        <p>Discover contemporary silhouettes, elevated fabrics, and timeless design language curated for modern wardrobes.</p>
+        <a href="#products" class="btn btn-gold">Explore Collection</a>
+      </div>
+      <div class="hero-dots" id="heroDots" aria-label="Hero slider controls"></div>
+    </section>
+
+    <!-- Featured collections image slider -->
+    <section id="collections" class="section reveal">
+      <div class="container">
+        <div class="section-head">
+          <h2>Featured Collections</h2>
+          <p>Curated drops with premium minimalist aesthetics.</p>
+        </div>
+
+        <div class="collection-carousel-wrap glass-soft">
+          <button class="carousel-control" id="collectionPrev" aria-label="Previous collection">‹</button>
+          <div class="collection-carousel" id="collectionCarousel"></div>
+          <button class="carousel-control" id="collectionNext" aria-label="Next collection">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modern product showcase with hover animations -->
+    <section id="products" class="section section-soft reveal">
+      <div class="container">
+        <div class="section-head">
+          <h2>Product Showcase</h2>
+          <p>Minimal essentials designed for comfort and confidence.</p>
+        </div>
+
+        <div class="categories" id="categories">
+          <button class="cat-btn active" data-category="All">All</button>
+          <button class="cat-btn" data-category="T-Shirts">T-Shirts</button>
+          <button class="cat-btn" data-category="Shirts">Shirts</button>
+          <button class="cat-btn" data-category="Pants">Pants</button>
+          <button class="cat-btn" data-category="Kurtas">Kurtas</button>
+          <button class="cat-btn" data-category="Loungewear">Loungewear</button>
+          <button class="cat-btn" data-category="Shorts">Shorts</button>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating animated cart icon -->
+  <button class="floating-cart" id="openCart" aria-label="Open shopping cart">
+    🛍
+    <span id="cartCount">0</span>
+  </button>
+
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-head">
+      <h3>Your Cart</h3>
+      <button id="closeCart" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-body" id="cartBody"></div>
+    <div class="cart-foot">
+      <p>Total: <strong id="cartTotal">₹0</strong></p>
+      <button id="openCheckout" class="btn btn-gold full">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <div id="overlay" class="overlay" hidden></div>
+
+  <!-- Product modal -->
+  <div id="productModal" class="modal" aria-hidden="true">
+    <div class="modal-card glass-soft">
+      <button id="closeProductModal" class="close-btn" aria-label="Close modal">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- Checkout modal (front-end only) -->
+  <div id="checkoutModal" class="modal" aria-hidden="true">
+    <div class="modal-card glass-soft checkout-card">
+      <button id="closeCheckout" class="close-btn" aria-label="Close checkout">✕</button>
+      <h3>Checkout</h3>
+      <p class="muted">Demo UI flow only — ready to connect with backend APIs later.</p>
+      <div class="checkout-grid">
+        <label>Full Name<input type="text" placeholder="John Doe" /></label>
+        <label>Email<input type="email" placeholder="john@example.com" /></label>
+        <label>Address<input type="text" placeholder="Street, City, ZIP" /></label>
+        <label>Phone<input type="tel" placeholder="+91 90000 00000" /></label>
+        <label>Card Number<input type="text" placeholder="0000 0000 0000 0000" /></label>
+        <label>Expiry<input type="text" placeholder="MM/YY" /></label>
+      </div>
+      <button id="placeOrder" class="btn btn-gold full">Place Order</button>
+      <p id="checkoutMessage" class="checkout-message"></p>
+    </div>
+  </div>
+
+  <footer class="site-footer reveal">
+    <div class="container footer-grid">
+      <div>
+        <h4>Niraa – A unit of SP Impex</h4>
+        <p>Luxury everyday fashion inspired by global design principles.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: hello@niraa.com</p>
+        <p>Phone: +91 98765 43210</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="pages/account.html">Login / Register</a>
+        <a href="pages/bulk-order.html">Bulk Orders (SP Impex)</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
